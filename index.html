@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <link rel="stylesheet" href="log1.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="form-container" id="signUpForm">
+            <h2>Sign p</h2>
+            <form>
+                <input type="email" id="signUpEmail" placeholder="Email Address" required>
+                <input type="password" id="signUpPassword" placeholder="Password" required>
+                <input type="confirm password" id="signUpconfirm password" placeholder="confirm password" required> 
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="toggle-text">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+        </div>
+
+        
+        <div class="form-container" id="loginForm" style="display: none;">
+            <h2>Login</h2>
+            <form>
+                <input type="email" id="loginEmail" placeholder="Email Address" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+            <p class="toggle-text">Don't have an account? <a href="#" id="showSignUp">Sign Up here</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("showLogin").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("signUpForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        });
+
+        document.getElementById("showSignUp").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("signUpForm").style.display = "block";
+        });
+    </script>
+</body>
+</html>
